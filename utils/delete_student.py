@@ -18,7 +18,7 @@ role_to_delete = 'student'
 #Identifier:
 #For student: use enrollment number
 #For faculty: use email
-identifier = '230280152051'
+identifier = '230280152003'
 #identifier = 'dnlpatel1104@gmail.com'
 
 if role_to_delete.lower() == 'student':
