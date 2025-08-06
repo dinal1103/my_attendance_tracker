@@ -1,4 +1,5 @@
 import streamlit as st
+import time
 
 st.set_page_config(page_title="AI-Based Face Recognition Attendance System", layout="centered")
 
@@ -22,8 +23,10 @@ if st.session_state.get("logged_in"):
             st.session_state.pop("enroll", None)
             st.session_state.pop("faculty_name", None)
             st.session_state.pop("student_name", None)
-            st.success("Logged out successfully.")
-            st.rerun()
+            st.success("✅ Logged out successfully.")
+            with st.spinner("⏳ Redirecting to Login Page"):
+                time.sleep(1)
+            st.switch_page("pages/2_Login.py")
 
             
         

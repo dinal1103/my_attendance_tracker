@@ -19,9 +19,10 @@ if st.session_state.get("logged_in"):
             st.session_state.role = None
             st.session_state.pop("enroll", None)
             st.session_state.pop("faculty_name", None)
-            st.session_state.page = "Home"
             st.success("✅ Logged out successfully.")
-            st.stop()
+            with st.spinner("⏳ Redirecting to Login Page"):
+                time.sleep(1)
+            st.switch_page("pages/2_Login.py")
 
 
 # Page Title

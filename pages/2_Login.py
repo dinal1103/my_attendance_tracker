@@ -2,6 +2,7 @@ import streamlit as st
 import sqlite3
 import sys
 import os
+import time
 
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 
@@ -17,9 +18,10 @@ if st.session_state.get("logged_in"):
             st.session_state.pop("enroll", None)
             st.session_state.pop("faculty_name", None)
             st.session_state.pop("faculty_email", None)
-            st.session_state.page = "Home"
-            st.success("Logged out successfully.")
-            st.stop()
+            st.success("✅ Logged out successfully.")
+            with st.spinner("⏳ Redirecting"):
+                time.sleep(1)
+            st.switch_page("pages/2_Login.py")
 
 st.set_page_config(page_title="Login - AI Attendance System", layout="centered")
 st.title("🔐 Login")

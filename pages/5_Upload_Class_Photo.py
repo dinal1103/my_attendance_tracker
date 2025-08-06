@@ -1,5 +1,6 @@
 import streamlit as st
 from datetime import datetime
+import time
 
 #Logout button
 if st.session_state.get("logged_in"):
@@ -10,9 +11,10 @@ if st.session_state.get("logged_in"):
             st.session_state.role = None
             st.session_state.pop("enroll", None)
             st.session_state.pop("faculty_name", None)
-            st.session_state.page = "Home"
-            st.success("Logged out successfully.")
-            st.stop()
+            st.success("✅ Logged out successfully.")
+            with st.spinner("⏳ Redirecting to Login Page"):
+                time.sleep(1)
+            st.switch_page("pages/2_Login.py")
 
 
 if "logged_in" not in st.session_state or not st.session_state.logged_in:
