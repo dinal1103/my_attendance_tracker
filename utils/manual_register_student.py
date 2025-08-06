@@ -14,7 +14,6 @@ students = [
     ('230280152043', 'Dinal Patel', 5, 2025, 'Female'),
     ('230280152051', 'Vrutti Patel', 5, 2025, 'Female'),
     ('230280152057', 'Drashti Rathod', 5, 2025, 'Female'),
-    ('230280152046', 'Priya Singh', 5, 2023, 'Female'),
 ]
 
 for student in students:

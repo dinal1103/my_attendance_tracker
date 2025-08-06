@@ -10,10 +10,10 @@ from utils.db_config import DB_PATH
 conn = sqlite3.connect(DB_PATH)
 cursor = conn.cursor()
 
-#cursor.execute("SELECT * FROM Student")
+cursor.execute("SELECT * FROM Student")
 #cursor.execute("SELECT * FROM Attendance")
 #cursor.execute("SELECT * FROM Error_Report")
-cursor.execute("SELECT * FROM Faculty")
+#cursor.execute("SELECT * FROM Faculty")
 
 rows = cursor.fetchall()
 

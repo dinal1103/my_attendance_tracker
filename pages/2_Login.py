@@ -34,7 +34,11 @@ if role == "Student":
     name = st.text_input("Name")
 
     if st.button("Login"):
-        cursor.execute("SELECT * FROM Student WHERE enrollment_number=? AND name=?", (enroll, name))
+        cursor.execute("""
+            SELECT * FROM Student 
+            WHERE enrollment_number=? 
+            AND REPLACE(LOWER(name), ' ', '') = REPLACE(LOWER(?), ' ', '')
+            """, (enroll, name))
         result = cursor.fetchone()
 
         if result:
